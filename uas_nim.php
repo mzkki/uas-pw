@@ -111,6 +111,9 @@ if (isset($_POST['submit'])) {
     </tr>
     <?php
     $no = 1;
+    if (mysqli_num_rows($query) == 0) {
+      echo "<tr><td colspan='6' style='text-align:center'>Data Tidak Ditemukan</td></tr>";
+    }
     while ($data = mysqli_fetch_array($query)) {
     ?>
       <tr>
